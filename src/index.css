@@ -1,7 +1,23 @@
 @import "tailwindcss";
 
+@theme {
+  --color-lime: #D8DB2F;
+
+  --color-slate-900: #133041;
+  --color-slate-700: #4E6E7E;
+  --color-slate-500: #6B94A8;
+  --color-slate-300: #9ABED5;
+  --color-slate-100: #E4F4FD;
+
+  --color-red: #D73328;
+
+  --font-jakarta: "Plus Jakarta Sans", Arial, sans-serif;
+  --text-base: 16px;
+  --leading-base: 150%;
+}
+
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: "Plus Jakarta Sans", Arial, sans-serif;
 }
 
 * {
