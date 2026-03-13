@@ -14,6 +14,9 @@
   --font-jakarta: "Plus Jakarta Sans", Arial, sans-serif;
   --text-base: 16px;
   --leading-base: 150%;
+
+  --breakpoint-tablet: 768px;
+  --breakpoint-desktop: 1440px;
 }
 
 :root {
