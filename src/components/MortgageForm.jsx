@@ -69,6 +69,7 @@ function MortgageForm({ setResults }) {
               type="number"
               id="amount"
               step="any"
+              min="0"
               className="h-full w-full px-4 text-slate-900 outline-none"
               {...register("amount", {
                 required: "This field is required"
@@ -97,6 +98,7 @@ function MortgageForm({ setResults }) {
               type="number"
               id="term"
               step="any"
+              min="0"
               className="h-full w-full px-4 text-slate-900 outline-none"
               {...register("term", {
                 required: "This field is required"
@@ -137,6 +139,7 @@ function MortgageForm({ setResults }) {
               type="number"
               id="rate"
               step="any"
+              min="0"
               className="h-full w-full px-4 text-slate-900 outline-none"
               {...register("rate", {
                 required: "This field is required"
