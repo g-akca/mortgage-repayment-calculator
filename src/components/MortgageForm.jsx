@@ -13,27 +13,51 @@ function MortgageForm() {
         <div className="flex flex-col gap-3">
           <label htmlFor="amount">Mortgage Amount</label>
 
-          <div className="flex items-center h-12 rounded-sm border border-slate-500 overflow-hidden text-lg font-bold leading-[125%] hover:border-slate-900">
-            <span className="bg-slate-100 py-3 px-4">£</span>
-            <input type="number" id="amount" name="amount" className="h-full w-full px-4 text-slate-900" />
+          <div 
+            className="
+              group flex items-center 
+              h-12 overflow-hidden
+              rounded-sm border border-slate-500 
+              text-lg font-bold leading-[125%] 
+              hover:border-slate-900 focus-within:border-lime
+            "
+          >
+            <span className="bg-slate-100 py-3 px-4 group-focus-within:bg-lime group-focus-within:text-slate-900">£</span>
+            <input type="number" id="amount" name="amount" className="h-full w-full px-4 text-slate-900 outline-none" />
           </div>
         </div>
 
         <div className="flex flex-col gap-3">
           <label htmlFor="term">Mortgage Term</label>
 
-          <div className="flex items-center h-12 rounded-sm border border-slate-500 overflow-hidden text-lg font-bold leading-[125%] hover:border-slate-900">
-            <input type="number" id="term" name="term" className="h-full w-full px-4 text-slate-900" />
-            <span className="bg-slate-100 py-3 px-4">years</span>
+          <div 
+            className="
+              group flex items-center 
+              h-12 overflow-hidden
+              rounded-sm border border-slate-500 
+              text-lg font-bold leading-[125%] 
+              hover:border-slate-900 focus-within:border-lime
+            "
+          >
+            <input type="number" id="term" name="term" className="h-full w-full px-4 text-slate-900 outline-none" />
+            <span className="bg-slate-100 py-3 px-4 group-focus-within:bg-lime group-focus-within:text-slate-900">years</span>
           </div>
         </div>
 
         <div className="flex flex-col gap-3">
           <label htmlFor="interest-rate">Interest Rate</label>
 
-          <div className="flex items-center h-12 rounded-sm border border-slate-500 overflow-hidden text-lg font-bold leading-[125%] hover:border-slate-900">
-            <input type="number" id="interest-rate" name="interest-rate" className="h-full w-full px-4 text-slate-900" />
-            <span className="bg-slate-100 py-3 px-4">%</span>
+          <div 
+            className="
+              group flex items-center 
+              h-12 overflow-hidden
+              rounded-sm border border-slate-500 
+              text-lg font-bold leading-[125%] 
+              hover:border-slate-900 focus-within:border-lime
+            "
+          >
+            <input type="number" id="interest-rate" name="interest-rate" className="h-full w-full px-4 text-slate-900 outline-none" />
+            <span className="bg-slate-100 py-3 px-4 group-focus-within:bg-lime group-focus-within:text-slate-900">%</span>
           </div>
         </div>
 
