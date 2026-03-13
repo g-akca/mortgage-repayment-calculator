@@ -1,6 +1,6 @@
 import calculatorIcon from "/assets/images/icon-calculator.svg";
 
-function MortgageForm() {
+function MortgageForm({ setResults }) {
   return (
     <form className="bg-white flex flex-col gap-6 py-8 px-6">
       <div>
