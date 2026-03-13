@@ -45,15 +45,26 @@ function MortgageForm({ setResults }) {
           <label htmlFor="amount">Mortgage Amount</label>
 
           <div 
-            className="
+            className={`
               group flex items-center 
               h-12 overflow-hidden
-              rounded-sm border border-slate-500 
+              rounded-sm border
               text-lg font-bold leading-[125%] 
-              hover:border-slate-900 focus-within:border-lime
-            "
+              ${errors.amount ? "border-red" : "border-slate-500 hover:border-slate-900 focus-within:border-lime"}
+            `}
           >
-            <span className="bg-slate-100 py-3 px-4 group-focus-within:bg-lime group-focus-within:text-slate-900">£</span>
+            <span 
+              className={`
+                py-3 px-4 
+                ${errors.amount ? 
+                  "bg-red text-white" 
+                  : 
+                  "bg-slate-100 group-focus-within:bg-lime group-focus-within:text-slate-900"
+                }
+              `}
+            >
+              £
+            </span>
             <input
               type="number"
               id="amount"
@@ -74,13 +85,13 @@ function MortgageForm({ setResults }) {
           <label htmlFor="term">Mortgage Term</label>
 
           <div 
-            className="
+            className={`
               group flex items-center 
               h-12 overflow-hidden
-              rounded-sm border border-slate-500 
+              rounded-sm border
               text-lg font-bold leading-[125%] 
-              hover:border-slate-900 focus-within:border-lime
-            "
+              ${errors.term ? "border-red" : "border-slate-500 hover:border-slate-900 focus-within:border-lime"}
+            `}
           >
             <input
               type="number"
@@ -91,7 +102,18 @@ function MortgageForm({ setResults }) {
                 required: "This field is required"
               })}
             />
-            <span className="bg-slate-100 py-3 px-4 group-focus-within:bg-lime group-focus-within:text-slate-900">years</span>
+            <span 
+              className={`
+                py-3 px-4 
+                ${errors.term ? 
+                  "bg-red text-white" 
+                  : 
+                  "bg-slate-100 group-focus-within:bg-lime group-focus-within:text-slate-900"
+                }
+              `}
+            >
+              years
+            </span>
           </div>
 
           {errors.term && (
@@ -103,13 +125,13 @@ function MortgageForm({ setResults }) {
           <label htmlFor="rate">Interest Rate</label>
 
           <div 
-            className="
+            className={`
               group flex items-center 
               h-12 overflow-hidden
-              rounded-sm border border-slate-500 
+              rounded-sm border
               text-lg font-bold leading-[125%] 
-              hover:border-slate-900 focus-within:border-lime
-            "
+              ${errors.rate ? "border-red" : "border-slate-500 hover:border-slate-900 focus-within:border-lime"}
+            `}
           >
             <input
               type="number"
@@ -120,7 +142,18 @@ function MortgageForm({ setResults }) {
                 required: "This field is required"
               })}
             />
-            <span className="bg-slate-100 py-3 px-4 group-focus-within:bg-lime group-focus-within:text-slate-900">%</span>
+            <span 
+              className={`
+                py-3 px-4 
+                ${errors.rate ? 
+                  "bg-red text-white" 
+                  : 
+                  "bg-slate-100 group-focus-within:bg-lime group-focus-within:text-slate-900"
+                }
+              `}
+            >
+              %
+            </span>
           </div>
 
           {errors.rate && (
