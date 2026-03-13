@@ -27,13 +27,13 @@ function MortgageForm({ setResults }) {
   }
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="bg-white flex flex-col gap-6 py-8 px-6">
-      <div>
-        <h1 className="mb-2 text-2xl leading-[125%] font-bold text-slate-900">Mortgage Calculator</h1>
+    <form onSubmit={handleSubmit(onSubmit)} className="bg-white flex flex-col gap-6 py-8 px-6 tablet:p-10 tablet:gap-10">
+      <div className="flex flex-col gap-2 tablet:flex-row tablet:justify-between tablet:items-center">
+        <h1 className="text-2xl leading-[125%] font-bold text-slate-900">Mortgage Calculator</h1>
         <button
           type="button"
           onClick={() => reset()}
-          className="underline cursor-pointer hover:text-slate-900"
+          className="underline cursor-pointer hover:text-slate-900 self-start"
         >
           Clear All
         </button>
@@ -81,87 +81,89 @@ function MortgageForm({ setResults }) {
             <p className="text-red text-sm">{errors.amount.message}</p>
           )}
         </div>
+        
+        <div className="tablet:grid tablet:grid-cols-2 tablet:gap-6">
+          <div className="flex flex-col gap-3">
+            <label htmlFor="term">Mortgage Term</label>
 
-        <div className="flex flex-col gap-3">
-          <label htmlFor="term">Mortgage Term</label>
-
-          <div 
-            className={`
-              group flex items-center 
-              h-12 overflow-hidden
-              rounded-sm border
-              text-lg font-bold leading-[125%] 
-              ${errors.term ? "border-red" : "border-slate-500 hover:border-slate-900 focus-within:border-lime"}
-            `}
-          >
-            <input
-              type="number"
-              id="term"
-              step="any"
-              min="0"
-              className="h-full w-full px-4 text-slate-900 outline-none"
-              {...register("term", {
-                required: "This field is required"
-              })}
-            />
-            <span 
+            <div 
               className={`
-                py-3 px-4 
-                ${errors.term ? 
-                  "bg-red text-white" 
-                  : 
-                  "bg-slate-100 group-focus-within:bg-lime group-focus-within:text-slate-900"
-                }
+                group flex items-center 
+                h-12 overflow-hidden
+                rounded-sm border
+                text-lg font-bold leading-[125%] 
+                ${errors.term ? "border-red" : "border-slate-500 hover:border-slate-900 focus-within:border-lime"}
               `}
             >
-              years
-            </span>
+              <input
+                type="number"
+                id="term"
+                step="any"
+                min="0"
+                className="h-full w-full px-4 text-slate-900 outline-none"
+                {...register("term", {
+                  required: "This field is required"
+                })}
+              />
+              <span 
+                className={`
+                  py-3 px-4 
+                  ${errors.term ? 
+                    "bg-red text-white" 
+                    : 
+                    "bg-slate-100 group-focus-within:bg-lime group-focus-within:text-slate-900"
+                  }
+                `}
+              >
+                years
+              </span>
+            </div>
+
+            {errors.term && (
+              <p className="text-red text-sm">{errors.term.message}</p>
+            )}
           </div>
 
-          {errors.term && (
-            <p className="text-red text-sm">{errors.term.message}</p>
-          )}
-        </div>
+          <div className="flex flex-col gap-3">
+            <label htmlFor="rate">Interest Rate</label>
 
-        <div className="flex flex-col gap-3">
-          <label htmlFor="rate">Interest Rate</label>
-
-          <div 
-            className={`
-              group flex items-center 
-              h-12 overflow-hidden
-              rounded-sm border
-              text-lg font-bold leading-[125%] 
-              ${errors.rate ? "border-red" : "border-slate-500 hover:border-slate-900 focus-within:border-lime"}
-            `}
-          >
-            <input
-              type="number"
-              id="rate"
-              step="any"
-              min="0"
-              className="h-full w-full px-4 text-slate-900 outline-none"
-              {...register("rate", {
-                required: "This field is required"
-              })}
-            />
-            <span 
+            <div 
               className={`
-                py-3 px-4 
-                ${errors.rate ? 
-                  "bg-red text-white" 
-                  : 
-                  "bg-slate-100 group-focus-within:bg-lime group-focus-within:text-slate-900"
-                }
+                group flex items-center 
+                h-12 overflow-hidden
+                rounded-sm border
+                text-lg font-bold leading-[125%] 
+                ${errors.rate ? "border-red" : "border-slate-500 hover:border-slate-900 focus-within:border-lime"}
               `}
             >
-              %
-            </span>
-          </div>
+              <input
+                type="number"
+                id="rate"
+                step="any"
+                min="0"
+                className="h-full w-full px-4 text-slate-900 outline-none"
+                {...register("rate", {
+                  required: "This field is required"
+                })}
+              />
+              <span 
+                className={`
+                  py-3 px-4 
+                  ${errors.rate ? 
+                    "bg-red text-white" 
+                    : 
+                    "bg-slate-100 group-focus-within:bg-lime group-focus-within:text-slate-900"
+                  }
+                `}
+              >
+                %
+              </span>
+            </div>
 
-          {errors.rate && (
-            <p className="text-red text-sm">{errors.rate.message}</p>
-          )}
+            {errors.rate && (
+              <p className="text-red text-sm">{errors.rate.message}</p>
+            )}
+          </div>
         </div>
 
         <fieldset className="flex flex-col gap-3">
@@ -232,7 +234,13 @@ function MortgageForm({ setResults }) {
 
       </div>
 
-      <button type="submit" className="flex justify-center items-center gap-4 h-14 bg-lime rounded-full cursor-pointer hover:bg-[#ECED97]">
+      <button 
+        type="submit" 
+        className="
+          flex justify-center items-center gap-4 h-14 px-10 bg-lime rounded-full cursor-pointer hover:bg-[#ECED97]
+          tablet:self-start
+        "
+      >
         <img src={calculatorIcon} alt="Calculator icon" />
         <span className="text-lg font-bold text-slate-900 leading-[125%]">Calculate Repayments</span>
       </button>
