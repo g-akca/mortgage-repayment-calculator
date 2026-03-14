@@ -12,7 +12,13 @@ function App() {
         tablet:p-10 tablet:flex tablet:items-center tablet:justify-center
       "
     >
-      <main className="min-h-screen overflow-hidden flex flex-col tablet:rounded-3xl tablet:min-h-0">
+      <main 
+        className="
+          min-h-screen overflow-hidden flex flex-col 
+          tablet:rounded-3xl tablet:min-h-0
+          desktop:grid desktop:grid-cols-2 desktop:max-w-252
+        "
+      >
         <MortgageForm setResults={setResults} />
         <ResultsSection results={results} />
       </main>
