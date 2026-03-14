@@ -71,6 +71,8 @@ function MortgageForm({ setResults }) {
               step="any"
               min="0"
               className="h-full w-full px-4 text-slate-900 outline-none"
+              aria-invalid={errors.amount ? "true" : "false"}
+              aria-describedby={errors.amount ? "amount-error" : undefined}
               {...register("amount", {
                 required: "This field is required"
               })}
@@ -78,7 +80,7 @@ function MortgageForm({ setResults }) {
           </div>
 
           {errors.amount && (
-            <p className="text-red text-sm">{errors.amount.message}</p>
+            <p id="amount-error" className="text-red text-sm">{errors.amount.message}</p>
           )}
         </div>
         
@@ -101,6 +103,8 @@ function MortgageForm({ setResults }) {
                 step="any"
                 min="0"
                 className="h-full w-full px-4 text-slate-900 outline-none"
+                aria-invalid={errors.term ? "true" : "false"}
+                aria-describedby={errors.term ? "term-error" : undefined}
                 {...register("term", {
                   required: "This field is required"
                 })}
@@ -120,7 +124,7 @@ function MortgageForm({ setResults }) {
             </div>
 
             {errors.term && (
-              <p className="text-red text-sm">{errors.term.message}</p>
+              <p id="term-error" className="text-red text-sm">{errors.term.message}</p>
             )}
           </div>
 
@@ -142,6 +146,8 @@ function MortgageForm({ setResults }) {
                 step="any"
                 min="0"
                 className="h-full w-full px-4 text-slate-900 outline-none"
+                aria-invalid={errors.rate ? "true" : "false"}
+                aria-describedby={errors.rate ? "rate-error" : undefined}
                 {...register("rate", {
                   required: "This field is required"
                 })}
@@ -161,12 +167,12 @@ function MortgageForm({ setResults }) {
             </div>
 
             {errors.rate && (
-              <p className="text-red text-sm">{errors.rate.message}</p>
+              <p id="rate-error" className="text-red text-sm">{errors.rate.message}</p>
             )}
           </div>
         </div>
 
-        <fieldset className="flex flex-col gap-3">
+        <fieldset className="flex flex-col gap-3" aria-describedby={errors.type ? "type-error" : undefined}>
           <legend className="mb-3">Mortgage Type</legend>
 
           <label 
@@ -228,7 +234,7 @@ function MortgageForm({ setResults }) {
           </label>
 
           {errors.type && (
-            <p className="text-red text-sm">{errors.type.message}</p>
+            <p id="type-error" className="text-red text-sm">{errors.type.message}</p>
           )}
         </fieldset>
 

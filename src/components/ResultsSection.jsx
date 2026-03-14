@@ -9,7 +9,8 @@ function ResultsSection({ results }) {
             gap-6 flex flex-col 
             tablet:p-10 tablet:gap-10 desktop:rounded-bl-[80px]
           "
-        >
+        aria-live="polite"
+      >
         <div>
           <h2 className="mb-4 text-white text-2xl font-bold leading-[125%]">Your results</h2>
           <p className="text-slate-300">Your results are shown below based on the information you provided. To adjust the results, edit the form and click “calculate repayments” again.</p>
