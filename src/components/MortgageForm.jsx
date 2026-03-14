@@ -33,7 +33,7 @@ function MortgageForm({ setResults }) {
         <button
           type="button"
           onClick={() => reset()}
-          className="underline cursor-pointer hover:text-slate-900 self-start"
+          className="underline cursor-pointer hover:text-slate-900 self-start transition-all"
         >
           Clear All
         </button>
@@ -49,13 +49,13 @@ function MortgageForm({ setResults }) {
               group flex items-center 
               h-12 overflow-hidden
               rounded-sm border
-              text-lg font-bold leading-[125%] 
+              text-lg font-bold leading-[125%] transition-all
               ${errors.amount ? "border-red" : "border-slate-500 hover:border-slate-900 focus-within:border-lime"}
             `}
           >
             <span 
               className={`
-                py-3 px-4 
+                py-3 px-4 transition-all
                 ${errors.amount ? 
                   "bg-red text-white" 
                   : 
@@ -91,7 +91,7 @@ function MortgageForm({ setResults }) {
                 group flex items-center 
                 h-12 overflow-hidden
                 rounded-sm border
-                text-lg font-bold leading-[125%] 
+                text-lg font-bold leading-[125%] transition-all
                 ${errors.term ? "border-red" : "border-slate-500 hover:border-slate-900 focus-within:border-lime"}
               `}
             >
@@ -107,7 +107,7 @@ function MortgageForm({ setResults }) {
               />
               <span 
                 className={`
-                  py-3 px-4 
+                  py-3 px-4 transition-all
                   ${errors.term ? 
                     "bg-red text-white" 
                     : 
@@ -132,7 +132,7 @@ function MortgageForm({ setResults }) {
                 group flex items-center 
                 h-12 overflow-hidden
                 rounded-sm border
-                text-lg font-bold leading-[125%] 
+                text-lg font-bold leading-[125%] transition-all
                 ${errors.rate ? "border-red" : "border-slate-500 hover:border-slate-900 focus-within:border-lime"}
               `}
             >
@@ -148,7 +148,7 @@ function MortgageForm({ setResults }) {
               />
               <span 
                 className={`
-                  py-3 px-4 
+                  py-3 px-4 transition-all
                   ${errors.rate ? 
                     "bg-red text-white" 
                     : 
@@ -175,14 +175,14 @@ function MortgageForm({ setResults }) {
               h-12 px-4 
               rounded-sm border border-slate-500
               has-checked:bg-lime/15 has-checked:border-lime
-              cursor-pointer hover:border-lime
+              cursor-pointer hover:border-lime transition-all
             "
           >
             <input
               type="radio"
               className="
                 appearance-none relative
-                w-5 h-5
+                w-5 h-5 transition-all
                 border-2 border-slate-700 rounded-full
                 checked:border-lime
                 checked:before:content-[''] checked:before:absolute
@@ -204,14 +204,14 @@ function MortgageForm({ setResults }) {
               h-12 px-4 
               rounded-sm border border-slate-500
               has-checked:bg-lime/15 has-checked:border-lime
-              cursor-pointer hover:border-lime
+              cursor-pointer hover:border-lime transition-all
             "
           >
             <input
               type="radio"
               className="
                 appearance-none relative
-                w-5 h-5
+                w-5 h-5 transition-all
                 border-2 border-slate-700 rounded-full
                 checked:border-lime
                 checked:before:content-[''] checked:before:absolute
@@ -238,7 +238,7 @@ function MortgageForm({ setResults }) {
         type="submit" 
         className="
           flex justify-center items-center gap-4 h-14 px-10 bg-lime rounded-full cursor-pointer hover:bg-[#ECED97]
-          tablet:self-start
+          tablet:self-start transition-all
         "
       >
         <img src={calculatorIcon} alt="Calculator icon" />
