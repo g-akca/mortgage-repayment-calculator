@@ -21,6 +21,7 @@
 
 :root {
   font-family: "Plus Jakarta Sans", Arial, sans-serif;
+  scrollbar-gutter: stable;
 }
 
 input[type="number"]::-webkit-outer-spin-button,

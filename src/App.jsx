@@ -14,7 +14,7 @@ function App() {
     >
       <main 
         className="
-          min-h-screen overflow-hidden flex flex-col 
+          min-h-screen bg-white overflow-hidden flex flex-col 
           tablet:rounded-3xl tablet:min-h-0
           desktop:grid desktop:grid-cols-2 desktop:max-w-252
         "
